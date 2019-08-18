@@ -66,3 +66,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+This app is designed to help shoppers keep their purchases under their spending limit.
+Next time you are shopping you can keep track of how much you have spent and how much you have left to go.
+When you make changes to your shopping list they are recorded on your device's browser. No data about you is stored anywhere else. Thank you for using this app and remember to "Keep It Under!"
