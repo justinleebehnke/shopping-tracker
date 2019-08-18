@@ -1,30 +1,21 @@
 import React from 'react'
-import {
-  Card,
-  CardContent,
-  Container
-} from '@material-ui/core'
 import Configuration from './Configuration/Configuration'
+import AddIcon from '@material-ui/icons/Add'
+import Fab from '@material-ui/core/Fab'
+import './App.css'
+
+import ShoppingItems from './ShoppingItems/ShoppingItems'
 import Status from './Status/Status'
 
 function App () {
   return (
     <div className='App'>
-      <Container className='container' maxWidth='sm'>
-        <Configuration />
-        <Status />
-        <Card className='list'>
-          <CardContent>
-            <ul>
-              <li>Item 1</li>
-              <li>Item 2</li>
-              <li>Item 3</li>
-              <li>Item 4</li>
-              <li>Item 5</li>
-            </ul>
-          </CardContent>
-        </Card>
-      </Container>
+      <Configuration />
+      <Status />
+      <ShoppingItems />
+      <Fab color='primary' aria-label='add' id='fab'>
+        <AddIcon />
+      </Fab>
     </div>
   )
 }

@@ -16,8 +16,8 @@ function Status () {
           variant='outlined'
           label='Total Spent'
           value='100'
-          readOnly='true'
-          disabled='true'
+          readOnly
+          disabled
           type='number'
           onChange={() => {}}
           InputProps={{
@@ -29,8 +29,8 @@ function Status () {
           variant='outlined'
           label='Remaining'
           value='100'
-          readOnly='true'
-          disabled='true'
+          readOnly
+          disabled
           type='number'
           onChange={() => {}}
           InputProps={{
@@ -38,7 +38,7 @@ function Status () {
           }}
         />
       </div>
-      <LinearProgress label='50' className='progress' color='secondary' variant='determinate' value={50} />
+      <LinearProgress className='progress' color='primary' variant='determinate' value={34} />
     </Container>
   )
 }
