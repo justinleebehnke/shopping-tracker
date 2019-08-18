@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
-import {
-  Container,
-  InputAdornment,
-  TextField
-} from '@material-ui/core'
+import PropTypes from 'prop-types'
+import { Container, InputAdornment, TextField } from '@material-ui/core'
 import './style.css'
 
 class Configuration extends Component {
-  render () {
+  render() {
+    const { taxRate, spendLimit, onChange } = this.props
+
     return (
       <Container id='configuration'>
         <div className='input-row'>
           <TextField
             className='input'
             variant='outlined'
-            label='Tax Rate'
-            value='100'
+            name='taxRate'
+            label='Sales Tax Rate'
+            value={taxRate}
             type='number'
-            onChange={() => {}}
+            onChange={onChange}
             InputProps={{
               endAdornment: <InputAdornment position='end'>%</InputAdornment>
             }}
@@ -25,18 +25,27 @@ class Configuration extends Component {
           <TextField
             className='input'
             variant='outlined'
+            name='spendLimit'
             label='Spend Limit'
-            value='100'
+            value={spendLimit}
             type='number'
-            onChange={() => {}}
+            onChange={onChange}
             InputProps={{
-              startAdornment: <InputAdornment position='start'>$</InputAdornment>
+              startAdornment: (
+                <InputAdornment position='start'>$</InputAdornment>
+              )
             }}
           />
         </div>
       </Container>
     )
   }
+}
+
+Configuration.propTypes = {
+  taxRate: PropTypes.number.isRequired,
+  spendLimit: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired
 }
 
 export default Configuration

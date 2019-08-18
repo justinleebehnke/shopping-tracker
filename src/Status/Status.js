@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   Container,
   InputAdornment,
@@ -7,7 +8,9 @@ import {
 } from '@material-ui/core'
 import './style.css'
 
-function Status () {
+function Status({ spendLimit, totalSpent }) {
+  const percentSpent = (totalSpent / spendLimit) * 100
+
   return (
     <Container id='status'>
       <div className='input-row'>
@@ -15,7 +18,7 @@ function Status () {
           className='input'
           variant='outlined'
           label='Total Spent'
-          value='100'
+          value={Number.parseFloat(totalSpent).toFixed(2)}
           readOnly
           disabled
           type='number'
@@ -28,7 +31,7 @@ function Status () {
           className='input'
           variant='outlined'
           label='Remaining'
-          value='100'
+          value={Number.parseFloat(spendLimit - totalSpent).toFixed(2)}
           readOnly
           disabled
           type='number'
@@ -38,9 +41,19 @@ function Status () {
           }}
         />
       </div>
-      <LinearProgress className='progress' color='primary' variant='determinate' value={34} />
+      <LinearProgress
+        className='progress'
+        color={percentSpent > 100 ? 'secondary' : 'primary'}
+        variant='determinate'
+        value={percentSpent > 100 ? 100 : percentSpent}
+      />
     </Container>
   )
+}
+
+Status.propTypes = {
+  spendLimit: PropTypes.number.isRequired,
+  totalSpent: PropTypes.number.isRequired
 }
 
 export default Status
