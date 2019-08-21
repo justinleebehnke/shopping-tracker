@@ -6,9 +6,8 @@ import {
   LinearProgress,
   TextField
 } from '@material-ui/core'
-import './style.css'
 
-function Status({ spendLimit, totalSpent }) {
+function Status ({ spendLimit, totalSpent }) {
   const percentSpent = (totalSpent / spendLimit) * 100
 
   return (

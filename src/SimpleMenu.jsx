@@ -3,7 +3,7 @@ import Menu from '@material-ui/core/Menu'
 import MenuIcon from '@material-ui/icons/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 
-export default function SimpleMenu () {
+function SimpleMenu () {
   const [anchorEl, setAnchorEl] = React.useState(null)
 
   function handleClose () {
@@ -30,3 +30,5 @@ export default function SimpleMenu () {
     </div>
   )
 }
+
+export default SimpleMenu

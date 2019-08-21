@@ -28,3 +28,62 @@ code {
   height: 35px;
   width: 8rem;
 }
+
+#status {
+  background: #ffffff;
+}
+
+#status .progress {
+  margin: 10px 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#shopping-items {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#shopping-items .table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+#shopping-items .table .header .row,
+#shopping-items .table .body .row {
+  display: grid;
+  grid-template-columns: 0.5fr 1.5fr 1.25fr 0.75fr 0.75fr;
+  align-items: center;
+  border-bottom: 1px solid rgba(224, 224, 224, 1);
+  width: 100%;
+}
+
+#shopping-items .table .header .row .cell,
+#shopping-items .table .body .row .cell {
+  padding: 0.5rem;
+  max-width: 100%;
+  border: none;
+  align-self: center;
+}
+
+#shopping-items .table .body .row .cell:first-child {
+  margin: auto;
+}
+
+#shopping-items .table .body .row .cell:last-child {
+  padding-top: 12px;
+}
+
+#configuration {
+  padding-top: 15px;
+  background: #ffffff;
+}
+
+.App #fab {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+}

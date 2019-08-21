@@ -1,7 +1,7 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import SimpleMenu from '../SimpleMenu/SimpleMenu'
+import SimpleMenu from './SimpleMenu'
 
 function ButtonAppBar () {
   return (
