@@ -23,6 +23,9 @@ module.exports = {
     'semi': ['error', 'never'],
     'space-before-function-paren': ['error', 'always'],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    'jsx-quotes': ["error", "prefer-single"]
+    'jsx-quotes': ["error", "prefer-single"],
+    "react/jsx-props-no-spreading": [0, {
+      "html": "ignore"
+  }]
   },
 }

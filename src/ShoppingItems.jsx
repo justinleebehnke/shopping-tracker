@@ -10,9 +10,8 @@ import {
 import CreateRoundedIcon from '@material-ui/icons/CreateRounded'
 import CheckBoxOutlineBlankOutlinedIcon from '@material-ui/icons/CheckBoxOutlineBlankOutlined'
 import CheckBoxOutlinedIcon from '@material-ui/icons/CheckBoxOutlined'
-import AddIcon from '@material-ui/icons/Add'
-import Fab from '@material-ui/core/Fab'
 import Row from './Row'
+import ItemDialog from './ItemDialog'
 
 class ShoppingItems extends Component {
   state = {
@@ -32,10 +31,9 @@ class ShoppingItems extends Component {
     }
   }
 
-  addItem = () => {
+  addItem = (row) => {
     const { rows } = this.state
-    const newRow = new Row(1, true, `Cupcake ${Math.random().toFixed(5)}`, 1)
-    this.setState({ rows: [newRow, ...rows] }, this.updateTotalCost)
+    this.setState({ rows: [row, ...rows] }, this.updateTotalCost)
   }
 
   updateTotalCost = () => {
@@ -98,9 +96,7 @@ class ShoppingItems extends Component {
             ))}
           </TableBody>
         </Table>
-        <Fab onClick={this.addItem} color='primary' aria-label='add' id='fab'>
-          <AddIcon />
-        </Fab>
+        <ItemDialog addItem={this.addItem} />
       </div>
     )
   }
